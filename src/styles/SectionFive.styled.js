@@ -225,5 +225,9 @@ export const Message = styled.div`
         color: #f9f9f9;
       }
     }
+
+    @media (max-width: 28em) {
+      padding-bottom: 2rem;
+    }
   }
 `;
