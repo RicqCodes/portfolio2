@@ -49,7 +49,7 @@ export const Header = styled.div`
 
 export const Form = styled.form`
   display: flex;
-  width: 95%;
+  width: 60%;
   margin: auto;
   justify-content: center;
   flex-direction: column;
@@ -88,8 +88,7 @@ export const Form = styled.form`
   }
 
   @media (max-width: 40.32em) {
-    /* padding: 8rem;
-    margin: auto; */
+    width: 95%;
   }
 `;
 

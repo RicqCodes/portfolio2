@@ -21,10 +21,6 @@ export const SectionFourContainer = styled.section`
     margin-bottom: 10rem;
     /* margin-top: 5rem; */
   }
-
-  @media (max-width: 26rem) {
-    margin-bottom: 0;
-  }
 `;
 
 export const InnerContent = styled.div`
