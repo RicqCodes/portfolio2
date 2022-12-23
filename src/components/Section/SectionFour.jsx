@@ -1,7 +1,6 @@
 import React, { forwardRef } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-// import { Section } from "../../styles/SectionOne.styled";
 import {
   SectionFourContainer,
   InnerContent,
@@ -12,7 +11,6 @@ import {
 } from "../../styles/SectionFour.styled";
 
 const SectionFour = forwardRef(({ inVP4 }, ref) => {
-  const navigation = useNavigate();
   return (
     <SectionFourContainer
       ref={ref}

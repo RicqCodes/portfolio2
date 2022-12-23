@@ -1,6 +1,5 @@
 import React, { forwardRef } from "react";
 
-// import { Section } from "../../styles/SectionOne.styled";
 import {
   SectionTwoContainer,
   InnerContent,
@@ -10,9 +9,7 @@ import {
 } from "../../styles/SectionTwo.styled";
 
 const SectionTwo = forwardRef(({ inVP2 }, ref) => {
-  //   console.log(inViewPort);
   return (
-    // >
     <SectionTwoContainer
       ref={ref}
       data-section="two"

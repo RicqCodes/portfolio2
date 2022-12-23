@@ -1,5 +1,4 @@
 import React, { forwardRef, useState } from "react";
-import { useEffect } from "react";
 
 import {
   SectionOneContainer,
@@ -13,7 +12,6 @@ import {
   FigureMobileContainer,
   FigureMobile,
 } from "../../styles/SectionOne.styled";
-import Nav from "../Nav";
 
 const SectionOne = forwardRef(
   (

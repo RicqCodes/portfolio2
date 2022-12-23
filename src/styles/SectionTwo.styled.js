@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Nav } from "./SectionOne.styled";
 
 export const SectionTwoContainer = styled.section`
   display: flex;
