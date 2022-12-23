@@ -11,12 +11,13 @@ import {
   SocialContact,
   Span,
 } from "../styles/Header.styled";
+import logo from "../svg/logo.svg";
 
 const Header = ({ inViewPort }) => {
   return (
     <HeaderContainer>
       <Logo href="https://prince.dev" aria-label="Logo, go to homepage">
-        PrinceDev
+        <img src={logo} alt="logo" />
       </Logo>
       <Button
         type="button"

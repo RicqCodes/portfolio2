@@ -1,6 +1,7 @@
 import React, { forwardRef } from "react";
 
 import {
+  SectionFiveContainer,
   InnerContent,
   Article,
   Content,
@@ -12,11 +13,9 @@ import {
   Message,
 } from "../../styles/SectionFive.styled";
 
-import { Section } from "../../styles/SectionOne.styled";
-
 const SectionFive = forwardRef(({ inVP5 }, ref) => {
   return (
-    <Section
+    <SectionFiveContainer
       ref={ref}
       data-section="five"
       tabIndex="1"
@@ -56,11 +55,14 @@ const SectionFive = forwardRef(({ inVP5 }, ref) => {
                   placeholder="Hi, i'd like for us to sit and talk about a project i have in mind, how soon can you be available for a call?"
                 />
               </Message>
+              <button type="submit">
+                <p>Let's Go</p>
+              </button>
             </Form>
           </Content>
         </Article>
       </InnerContent>
-    </Section>
+    </SectionFiveContainer>
   );
 });
 

@@ -1,7 +1,7 @@
 import React, { forwardRef } from "react";
 
-import { Section } from "../../styles/SectionOne.styled";
 import {
+  SectionThreeContainer,
   InnerContent,
   Article,
   Content,
@@ -11,7 +11,7 @@ import portfolio from "../../svg/portfolio.svg";
 
 const SectionThree = forwardRef(({ inVP3 }, ref) => {
   return (
-    <Section
+    <SectionThreeContainer
       ref={ref}
       data-section="three"
       data-color="brown"
@@ -24,7 +24,7 @@ const SectionThree = forwardRef(({ inVP3 }, ref) => {
             <h1>
               Experiences
               <br />
-              Last 3 Years
+              Last 5 Years
             </h1>
             <p>
               I've built products for companies and businesses around the globe
@@ -60,7 +60,7 @@ const SectionThree = forwardRef(({ inVP3 }, ref) => {
           <img src={portfolio} alt="portfolio svg" />
         </Figure>
       </InnerContent>
-    </Section>
+    </SectionThreeContainer>
   );
 });
 

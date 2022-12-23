@@ -23,15 +23,36 @@ html {
         overflow-y: auto;
 
         -webkit-overflow-scrolling: touch;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
 
-  &::-webkit-scrollbar {
-    display: none;
-  }
+        &::-webkit-scrollbar {
+        display: none;
+        }
 
-        /* overflow-y: hidden; */
-        /* overflow-x: hidden; */
+       @media (max-width: 83em) {
+        font-size: 58%;
+       }
+
+       @media (max-width: 72em) {
+        font-size: 55%;
+       }
+
+       @media (max-width: 56em) {
+        font-size: 53%;
+       }
+
+       @media (max-width: 49.7em) {
+        font-size: 42%;
+       }
+
+       @media (max-width: 41em) {
+        font-size: 55%;
+       }
+
+       @media (max-width: 27em) {
+        font-size: 50%;
+       }
     }
 
 *, *::before, *::after {
@@ -43,6 +64,7 @@ html {
 body {
         /* color: #3454b4; */
         font: inherit;
+        position: relative;
         font-family: "SF UI Text",  sans-serif;
         background-color: #f9f9f9;
         line-height: 1;

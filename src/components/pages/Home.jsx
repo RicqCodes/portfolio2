@@ -7,6 +7,8 @@ import SectionTwo from "../Section/SectionTwo";
 import SectionThree from "../Section/SectionThree";
 import SectionFour from "../Section/SectionFour";
 import SectionFive from "../Section/SectionFive";
+import Footer from "../Footer";
+import Nav from "../Nav";
 
 import useIntersecton from "../../hooks/useIntersection";
 
@@ -38,13 +40,31 @@ const Home = () => {
 
   const { isIntersecting: inVP5, current: element5 } = useIntersecton(
     section5,
-    "15%"
+    "-20%"
   );
+
+  const scrollTo = (section) => {
+    console.log(section);
+    section && section.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <Fragment>
       <Header inVP2={inVP2} />
       <Main tabIndex="1">
+        <Nav
+          scrollTo={scrollTo}
+          element1={element1}
+          element2={element2}
+          element3={element3}
+          element4={element4}
+          element5={element5}
+          inVP1={inVP1}
+          inVP2={inVP2}
+          inVP3={inVP3}
+          inVP4={inVP4}
+          inVP5={inVP5}
+        />
         <SectionOne
           ref={section1}
           element1={element1}
@@ -56,12 +76,14 @@ const Home = () => {
           inVP2={inVP2}
           inVP3={inVP3}
           inVP4={inVP4}
+          inVP5={inVP5}
         />
         <SectionTwo ref={section2} current2={element2} inVP2={inVP2} />
         <SectionThree ref={section3} current3={element3} inVP3={inVP3} />
         <SectionFour ref={section4} current4={element4} inVP4={inVP4} />
         <SectionFive ref={section5} current5={element5} inVP5={inVP5} />
       </Main>
+      <Footer />
     </Fragment>
   );
 };

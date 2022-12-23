@@ -15,7 +15,7 @@ const useIntersecton = (element, rootMargin) => {
 
     element.current && observer.observe(element.current);
 
-    return () => observer.unobserve(current);
+    return () => observer?.unobserve(current);
   }, [element, rootMargin]);
   return { isIntersecting, current };
 };

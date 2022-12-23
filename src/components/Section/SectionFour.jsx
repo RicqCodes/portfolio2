@@ -1,8 +1,9 @@
 import React, { forwardRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-import { Section } from "../../styles/SectionOne.styled";
+// import { Section } from "../../styles/SectionOne.styled";
 import {
+  SectionFourContainer,
   InnerContent,
   Lanes,
   Lane,
@@ -13,7 +14,7 @@ import {
 const SectionFour = forwardRef(({ inVP4 }, ref) => {
   const navigation = useNavigate();
   return (
-    <Section
+    <SectionFourContainer
       ref={ref}
       data-section="four"
       tabIndex="1"
@@ -51,7 +52,7 @@ const SectionFour = forwardRef(({ inVP4 }, ref) => {
           </Lane>
         </Lanes>
       </InnerContent>
-    </Section>
+    </SectionFourContainer>
   );
 });
 

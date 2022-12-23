@@ -2,7 +2,7 @@ import React, { forwardRef, useState } from "react";
 import { useEffect } from "react";
 
 import {
-  Section,
+  SectionOneContainer,
   InnerContent,
   Article,
   Content,
@@ -10,8 +10,10 @@ import {
   Figure,
   Span,
   InnerContentBottom,
-  Nav,
+  FigureMobileContainer,
+  FigureMobile,
 } from "../../styles/SectionOne.styled";
+import Nav from "../Nav";
 
 const SectionOne = forwardRef(
   (
@@ -31,15 +33,11 @@ const SectionOne = forwardRef(
   ) => {
     const [hover, setHover] = useState(false);
 
-    const scrollTo = (section) => {
-      console.log(section);
-      section && section.scrollIntoView({ behavior: "smooth" });
-    };
-
+    console.log(inVP1, element1);
     console.log(inVP5, element5);
 
     return (
-      <Section
+      <SectionOneContainer
         ref={ref}
         data-section="one"
         data-color="brown"
@@ -83,72 +81,13 @@ const SectionOne = forwardRef(
               several countries.
             </li>
           </Ul>
-          <Nav aria-label="Main navigation">
-            <ul>
-              <li>
-                <button
-                  onClick={() => scrollTo(element1)}
-                  type="button"
-                  aria-label="Go to first section."
-                  className={
-                    !inVP2 && !inVP3 && !inVP4 && !inVP5 && inVP1
-                      ? "current"
-                      : ""
-                  }
-                ></button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollTo(element2)}
-                  type="button"
-                  aria-label="Go to second section"
-                  className={
-                    !inVP1 && !inVP3 && !inVP4 && !inVP5 && inVP2
-                      ? "current"
-                      : ""
-                  }
-                ></button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollTo(element3)}
-                  type="button"
-                  aria-label="Go to third section"
-                  className={
-                    !inVP1 && !inVP2 && !inVP4 && !inVP5 && inVP3
-                      ? "current"
-                      : ""
-                  }
-                ></button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollTo(element4)}
-                  type="button"
-                  aria-label="Go to fourth section"
-                  className={
-                    !inVP1 && !inVP2 && !inVP3 && !inVP5 && inVP4
-                      ? "current"
-                      : ""
-                  }
-                ></button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollTo(element5)}
-                  type="button"
-                  aria-label="Go to fifth section"
-                  className={
-                    !inVP1 && !inVP2 && !inVP3 && !inVP4 && inVP5
-                      ? "current"
-                      : ""
-                  }
-                ></button>
-              </li>
-            </ul>
-          </Nav>
         </InnerContentBottom>
-      </Section>
+        <FigureMobileContainer>
+          <FigureMobile>
+            <Span></Span>
+          </FigureMobile>
+        </FigureMobileContainer>
+      </SectionOneContainer>
     );
   }
 );

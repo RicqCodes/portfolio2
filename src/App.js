@@ -25,4 +25,7 @@ export default App;
 
 const AppContainer = styled.div`
   position: relative;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
 `;

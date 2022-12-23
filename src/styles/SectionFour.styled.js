@@ -1,44 +1,41 @@
 import styled from "styled-components";
 
-import { Section } from "./SectionOne.styled";
+// import { Section } from "./SectionOne.styled";
 
-export const InnerContent = styled.div`
-  @media (max-width: 1500px) {
-    ${Section} & {
-      max-width: unset;
-      padding: 0 calc(6rem - 2rem);
-    }
+export const SectionFourContainer = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  /* padding: 20rem 12rem 0; */
+  scroll-snap-align: start;
+
+  @media (max-width: 41em) {
+    padding: 10rem 6rem 0;
+    scroll-snap-align: none;
   }
 
-  @media (min-aspect-ratio: 1440 / 900) {
-    ${Section} & {
-      margin-top: 4.2rem;
-    }
-  }
-
-  ${Section} & {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  @media (min-height: "676px") {
-    /* margin-bottom: -14rem; */
+  @media (max-width: 29.3em) {
+    flex-direction: column;
   }
 `;
 
-export const Lanes = styled.div`
-  @media (min-width: 1024px) and (min-height: 665px) and (max-height: 1500px) {
-    ${Section} ${InnerContent} & {
-      min-height: 60.5rem;
-    }
-  }
+export const InnerContent = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
 
-  ${Section} ${InnerContent} & {
-    width: 100%;
-    display: flex;
-    background-color: #fff;
+export const Lanes = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  width: 100%;
+
+  @media (max-width: 29.3em) {
+    flex-direction: column;
   }
 `;
 
@@ -49,7 +46,7 @@ export const Lane = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 25rem;
+    width: 50%;
     height: 5rem;
     border: 1px solid #9a1750;
     background: linear-gradient(to right, #9a1750 50%, white 50%);
@@ -75,6 +72,10 @@ export const Lane = styled.div`
         color: #fff;
       }
     }
+  }
+
+  @media (max-width: 41.2rem) {
+    padding: 4rem;
   }
 `;
 
@@ -104,5 +105,18 @@ export const Content = styled.div`
     letter-spacing: 0.02em;
     margin: 2rem 0;
     color: #727170;
+  }
+
+  @media (max-width: 41.2em) {
+    h1 {
+      font-size: 3.8rem;
+      max-width: 50vw;
+    }
+  }
+
+  @media (max-width: 29em) {
+    p {
+      width: 50vw;
+    }
   }
 `;

@@ -1,50 +1,32 @@
 import styled from "styled-components";
 
-import { Section } from "./SectionOne.styled";
+// import { Section } from "./SectionOne.styled";
 
 export const SectionFiveContainer = styled.div`
-  width: 100vw;
-  min-height: 100vh;
+  display: flex;
+  height: 100vh;
+  padding: 5rem 8rem 0;
+  align-items: center;
+  justify-content: center;
+  scroll-snap-align: start;
+
+  @media (max-width: 41em) {
+    padding: 10rem 6rem 0;
+    scroll-snap-align: none;
+    height: auto;
+  }
 `;
 
 export const InnerContent = styled.div`
-  ${Section} & {
-    margin-top: 3rem;
-    align-items: center;
-    flex-direction: column;
-  }
-
-  @media (min-width: 701px) and (max-width: 1500px) {
-    ${Section} & {
-      max-width: 150rem;
-    }
-  }
-
-  @media (min-width: 701px) {
-    ${Section} & {
-      padding: 0 10rem;
-    }
-  }
+  width: 100%;
 `;
 
 export const Article = styled.article`
   position: relative;
-
-  ${Section} & {
-    margin-bottom: 5.74rem;
-  }
-
-  @media (min-width: 581px) {
-    ${Section} & {
-      text-align: center;
-    }
-  }
 `;
 
 export const Content = styled.div`
-  ${Section} & {
-    position: relative;
-  }
+  width: 100%;
 `;
 
 export const Header = styled.div`
@@ -67,15 +49,60 @@ export const Header = styled.div`
 
 export const Form = styled.form`
   display: flex;
+  width: 95%;
+  margin: auto;
+  justify-content: center;
   flex-direction: column;
   gap: 6rem;
+
+  button {
+    width: 40%;
+    margin: auto;
+    height: 5rem;
+    background: transparent;
+    border: 1px solid #9a1750;
+    color: #9a1750;
+    font-size: 1.8rem;
+    background: linear-gradient(to right, #9a1750 50%, white 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: all 0.5s ease-out;
+
+    p {
+      text-align: center;
+      justify-items: center;
+      color: #9a1750;
+      font-size: 1.5rem;
+      letter-spacing: 0.2rem;
+      font-weight: 500;
+      transition: all 0.6s ease-out;
+    }
+
+    &:hover {
+      background-position: left bottom;
+
+      p {
+        color: #fff;
+      }
+    }
+  }
+
+  @media (max-width: 40.32em) {
+    /* padding: 8rem;
+    margin: auto; */
+  }
 `;
 
 export const InfoContainer = styled.div`
   text-align: left;
   display: flex;
   gap: 10rem;
-  width: 64rem;
+  width: 100%;
+
+  @media (max-width: 524px) {
+    flex-direction: column;
+    gap: 6rem;
+  }
 `;
 
 export const Name = styled.div`
@@ -104,6 +131,7 @@ export const Name = styled.div`
       font-size: 1.6rem;
       color: #c27496;
       font-weight: 200;
+      padding-bottom: 0.4rem;
     }
   }
 
@@ -162,7 +190,7 @@ export const Message = styled.div`
   text-align: left;
   display: flex;
   flex-direction: column;
-  width: 64rem;
+  width: 100%;
   gap: 1rem;
 
   & label {
