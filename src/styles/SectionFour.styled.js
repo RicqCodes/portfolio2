@@ -8,7 +8,6 @@ export const SectionFourContainer = styled.section`
   align-items: center;
   justify-content: center;
   height: 100vh;
-  /* padding: 20rem 12rem 0; */
   scroll-snap-align: start;
 
   @media (max-width: 41em) {
@@ -16,8 +15,15 @@ export const SectionFourContainer = styled.section`
     scroll-snap-align: none;
   }
 
-  @media (max-width: 29.3em) {
+  @media (max-width: 30em) {
     flex-direction: column;
+    padding: 15rem 0.5rem 0;
+    margin-bottom: 10rem;
+    /* margin-top: 5rem; */
+  }
+
+  @media (max-width: 26rem) {
+    margin-bottom: 0;
   }
 `;
 
@@ -25,6 +31,10 @@ export const InnerContent = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 26rem) {
+    width: 90%;
+  }
 `;
 
 export const Lanes = styled.div`
