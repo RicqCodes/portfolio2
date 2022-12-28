@@ -27,32 +27,38 @@ const SectionThree = forwardRef(({ inVP3 }, ref) => {
               Last 5 Years
             </h1>
             <p>
-              I've built products for companies and businesses around the globe
-              ranging from marketing websites to complex solutions and
-              enterprise apps with focus on fast, elegant and accessible user
-              experiences.
+              At P.Tech, I had the opportunity to work on various website
+              building projects for clients across Nigeria. The company had a
+              wide range of clients in different industries, which allowed me to
+              gain experience in building websites for different purposes.
             </p>
             <p>
-              Currently, I work at Shopify as a Senior UX Developer and
-              Accessibility advocate crafting thoughtful and inclusive
-              experiences that adhere to web standards for over a million
-              merchants across the world.
+              As an intern at Crea8 Solutions, I was given the opportunity to
+              work on web development projects that aimed to solve real-world
+              problems for clients. This experience was particularly valuable as
+              it allowed me to apply my technical skills in a practical setting
+              and see the impact of my work on people's lives.
             </p>
             <p>
-              Before now, I was Principal Frontend Engineer at hellotax, where I
-              worked on a suite of tools and services tailored at providing
-              fast, automated VAT Registration / filings &amp; Returns solutions
-              for multi-channel sellers across Europe.
+              At Sibus Solutions, I was hired as a junior developer and worked
+              on a variety of projects that aimed to solve practical issues for
+              clients. This was a great opportunity for me to take on more
+              responsibility and work on more complex projects.
             </p>
             <p>
-              Prior to hellotax, I was Senior frontend engineering contractor
-              with Pixel2HTML, building JavaScript applications and interfaces
-              for orgs and individuals.
+              At DotLaunch, I was part of a team working on a web3 decentralised
+              Launchapp pad. This was an exciting project that involved using
+              cutting-edge technologies to create a platform that would enable
+              people to launch their own decentralized applications. I enjoyed
+              the challenge of working on this innovative project and learned a
+              lot about how to build applications on a decentralized platform.
             </p>
             <p>
-              I once also led the frontend team at a Russian startup, Conectar
-              through building multiple React applications into a single robust
-              learning platform.
+              Currently, I am working as a freelancer, taking on various web
+              development projects. This allows me to work on a wide range of
+              projects and continue to learn and grow as a developer.
+              Freelancing also gives me the flexibility to choose the projects
+              that align with my interests and goals, which is a great benefit.
             </p>
           </Content>
         </Article>

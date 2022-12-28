@@ -14,6 +14,7 @@ import {
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  console.log(typeof null);
   return (
     <FooterContainer data-section="footer">
       <InnerContainer>

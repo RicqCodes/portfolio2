@@ -1,4 +1,6 @@
 import React from "react";
+import { useEffect } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import {
@@ -13,20 +15,37 @@ import {
 } from "../styles/Header.styled";
 import logo from "../svg/logo.svg";
 
-const Header = ({ inViewPort }) => {
+const Header = (props) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    const body = document.body;
+    isOpen ? (body.style.overflow = "hidden") : (body.style.overflow = "auto");
+  }, [isOpen]);
+
   return (
     <HeaderContainer>
       <Logo href="https://prince.dev" aria-label="Logo, go to homepage">
         <img src={logo} alt="logo" />
       </Logo>
       <Button
+        onClick={() => setIsOpen(!isOpen)}
         type="button"
         aria-label="Open contact menu"
         aria-controls="contact-menu"
-        aria-expanded={inViewPort ? "true" : "false"}
+        aria-expanded={props.inVP2 ? "true" : "false"}
+        harmburger={isOpen ? true : false}
+        color={
+          (!props.inVP2 && !props.inVP4 && !props.inVP5 && props.inVP1) ||
+          props.inVP3
+            ? "primaryColor"
+            : "SecondaryColor"
+        }
+        className={isOpen ? "open" : isOpen ? "secondaryColor" : "primaryColor"}
       ></Button>
-      <Nav aria-label="Contact menu" className="">
-        <Ul itemScope itemType="http://schema.org/SiteNavigationElement">
+
+      <Nav aria-label="Contact menu" className={isOpen ? "open" : "close"}>
+        <Ul>
           <li>
             <Link data-link to="/portfolio">
               Work
@@ -71,7 +90,7 @@ const Header = ({ inViewPort }) => {
               target="_blank"
               rel="noreferrer noopener"
             >
-              " TW "
+              TW
             </a>
           </li>
           <li data-link>
@@ -81,7 +100,7 @@ const Header = ({ inViewPort }) => {
               target="_blank"
               rel="noreferrer noopener"
             >
-              " LN "
+              LN
             </a>
           </li>
           <li data-link>
@@ -91,7 +110,7 @@ const Header = ({ inViewPort }) => {
               target="_blank"
               rel="noreferrer noopener"
             >
-              " GH "
+              GH
             </a>
           </li>
         </SocialContact>

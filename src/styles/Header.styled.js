@@ -23,6 +23,10 @@ export const HeaderContainer = styled.header`
     padding-left: 4rem;
     padding-right: 4rem;
     height: 10rem;
+    /* background-color: ${({ theme }) => theme.colors.primaryColor}; */
+  }
+
+  @media (max-width: 655px) {
     background-color: ${({ theme }) => theme.colors.primaryColor};
   }
 `;
@@ -36,6 +40,7 @@ export const Logo = styled.a`
   transition: color 700ms;
   outline-color: transparent;
   text-decoration: none;
+  z-index: 999;
 
   img {
     width: 100%;
@@ -51,62 +56,74 @@ export const Logo = styled.a`
   }
 `;
 export const Button = styled.button`
-  /* z-index: 999; */
+  z-index: 999;
   width: 4rem;
   height: 3rem;
   background: none;
   position: relative;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-flexbox;
   display: inline-flex;
   margin-top: 1rem;
-  color: ${({ theme }) => theme.colors.primaryColor};
   border: none;
 
-  ${HeaderContainer} &:before,
-  ${HeaderContainer} &:after {
+  &:before,
+  &:after {
     content: "";
     width: 100%;
     height: 2px;
     position: absolute;
-    -webkit-transition: 0.2s ease;
     transition: 0.2s ease;
-    -webkit-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
     transform: rotate(0deg);
-    background-color: ${({ theme }) => theme.colors.primaryColor};
+
+    background-color: ${(props) =>
+      props.harmburger === true
+        ? props.theme.colors.secondaryColor
+        : props.color === "primaryColor"
+        ? props.theme.colors.primaryColor
+        : props.theme.colors.secondaryColor};
   }
 
-  ${HeaderContainer} &:before {
+  &:before {
     top: 0;
   }
 
-  ${HeaderContainer} &:after {
+  &:after {
     right: 0;
     width: 72%;
     top: 1.6rem;
   }
 
-  @media (max-width: 41em) {
-    ${HeaderContainer} &:before,
-    ${HeaderContainer} &:after {
-      background-color: ${({ theme }) => theme.colors.secondaryColor};
+  &.open:before {
+    transform: rotate(45deg);
+    width: 80%;
+  }
+
+  &.open:after {
+    top: 0.05rem;
+    right: 0.8rem;
+    width: 80%;
+    transform: rotate(-45deg);
+  }
+
+  @media (max-width: 655px) {
+    &:before,
+    &:after {
+      content: "";
+
+      background-color: ${(props) => props.theme.colors.secondaryColor};
     }
   }
 `;
 
 export const Nav = styled.nav`
   display: none;
+  background-color: #fff;
   box-shadow: none;
   padding: 5.5rem;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
+
+  &.open {
+    display: inline-block;
+  }
 
   ${HeaderContainer} &:not(.open) {
     opacity: 1;
@@ -120,8 +137,16 @@ export const Nav = styled.nav`
     width: 35.223rem;
     font-size: 1.58rem;
     position: absolute;
-    -webkit-transition: opacity 0.4s, box-shadow 0.4s;
+    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.1);
     transition: opacity 0.4s, box-shadow 0.4s;
+
+    @media (max-width: 655px) {
+      width: 100%;
+      height: 100vh;
+      top: 0;
+      left: 0;
+      padding: 8.5rem;
+    }
   }
 
   &::before {
@@ -145,9 +170,11 @@ export const Ul = styled.ul`
     margin: 2.18rem 0;
     -webkit-transition-delay: 200ms;
     transition-delay: 200ms;
-    -webkit-transition: opacity, -webkit-transform 0.3s;
-    -webkit-transition: opacity, transform 0.3s;
     transition: opacity, transform 0.3s;
+
+    @media (max-width: 655px) {
+      font-size: 3rem;
+    }
   }
 
   ${HeaderContainer} & {
@@ -163,7 +190,7 @@ export const Ul = styled.ul`
   }
 
   a {
-    color: ${({ theme }) => theme.colors.primaryColor};
+    color: ${({ theme }) => theme.colors.secondaryColor};
   }
 
   @media (hover: hover) and (any-pointer: fine) {
@@ -203,6 +230,7 @@ export const BasicContact = styled.div`
 
   ul {
     font-size: 1.82rem;
+    color: ${({ theme }) => theme.colors.secondaryColor};
 
     ${HeaderContainer} ${Nav}:not(.open) & {
       -webkit-transform: translateY(40px);
@@ -218,7 +246,7 @@ export const BasicContact = styled.div`
     }
 
     a {
-      color: ${({ theme }) => theme.colors.primaryColor};
+      color: ${({ theme }) => theme.colors.secondaryColor};
     }
 
     @media (hover: hover) and (any-pointer: fine) {
@@ -245,6 +273,10 @@ export const BasicContact = styled.div`
         background-color: currentColor;
       }
     }
+
+    @media (max-width: 655px) {
+      font-size: 3rem;
+    }
   }
 
   ${HeaderContainer} ${Nav}:not(.open) & {
@@ -255,6 +287,10 @@ export const BasicContact = styled.div`
     margin: 0 0 5.6rem;
     -webkit-transition-delay: 400ms;
     transition-delay: 400ms;
+
+    @media (max-width: 655px) {
+      margin-top: 20rem;
+    }
   }
 `;
 
@@ -263,6 +299,10 @@ export const Span = styled.span`
   letter-spacing: 0.25em;
   -webkit-text-transform: uppercase;
   text-transform: uppercase;
+
+  @media (max-width: 655px) {
+    font-size: 2rem;
+  }
 
   ${HeaderContainer} ${Nav}:not(.open) ${BasicContact} & {
     opacity: 0;
@@ -303,7 +343,14 @@ export const SocialContact = styled.ul`
   }
 
   a {
-    color: ${({ theme }) => theme.colors.primaryColor};
+    color: ${({ theme }) => theme.colors.secondaryColor};
+  }
+
+  @media (max-width: 655px) {
+    margin-top: 12rem;
+    a {
+      font-size: 2.2rem;
+    }
   }
 
   @media (hover: hover) and (any-pointer: fine) {

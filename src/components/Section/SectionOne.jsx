@@ -54,8 +54,9 @@ const SectionOne = forwardRef(
                 </span>
               </h1>
               <p>
-                I enjoy designing and developing solid and scalable frontend
-                products with great user experiences.
+                I bring a wealth of frontend programming experience to the
+                table, with a knack for crafting intuitive and visually stunning
+                interfaces.
               </p>
             </Content>
           </Article>
@@ -71,12 +72,12 @@ const SectionOne = forwardRef(
         <InnerContentBottom>
           <Ul aria-label="Highlights.">
             <li>
-              Highly skilled at progressive enhancement, design systems & UI
-              Engineering.
+              5 years of web development experience, ready to bring your online
+              vision to life.
             </li>
             <li>
-              Over a decade of experience building products for clients across
-              several countries.
+              Proficient web developer with a track record of delivering
+              top-quality projects.
             </li>
           </Ul>
         </InnerContentBottom>

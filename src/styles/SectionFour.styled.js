@@ -56,7 +56,7 @@ export const Lane = styled.div`
     height: 5rem;
     border: 1px solid #9a1750;
     background: linear-gradient(to right, #9a1750 50%, white 50%);
-
+    min-width: 150px;
     background-size: 200% 100%;
     background-position: right bottom;
     transition: all 0.5s ease-out;

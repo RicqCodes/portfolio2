@@ -50,7 +50,19 @@ const Home = () => {
 
   return (
     <Fragment>
-      <Header inVP2={inVP2} />
+      <Header
+        scrollTo={scrollTo}
+        element1={element1}
+        element2={element2}
+        element3={element3}
+        element4={element4}
+        element5={element5}
+        inVP1={inVP1}
+        inVP2={inVP2}
+        inVP3={inVP3}
+        inVP4={inVP4}
+        inVP5={inVP5}
+      />
       <Main tabIndex="1">
         <Nav
           scrollTo={scrollTo}
