@@ -287,7 +287,7 @@ export const BasicContact = styled.div`
     transition-delay: 400ms;
 
     @media (max-width: 655px) {
-      margin-top: 18rem;
+      margin-top: 14rem;
     }
   }
 `;
