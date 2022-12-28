@@ -94,13 +94,11 @@ export const Button = styled.button`
 
   &.open:before {
     transform: rotate(45deg);
-    width: 80%;
   }
 
   &.open:after {
-    top: 0.05rem;
-    right: 0.8rem;
-    width: 80%;
+    top: 0;
+    width: 100%;
     transform: rotate(-45deg);
   }
 
