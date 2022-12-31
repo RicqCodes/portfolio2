@@ -79,6 +79,11 @@ body {
         -moz-osx-font-smoothing: inherit;
     }
 
+    html,body {
+        height: 100vh;
+        overflow: hidden;
+    }
+
 button, [type='button'], [type='reset'], [type='submit'] {
     -webkit-appearance: button;
 }

@@ -16,7 +16,9 @@ export const HeaderContainer = styled.header`
   background: transparent;
   justify-content: space-between;
   font-size: 1rem;
-  height: 16.12rem;
+  height: 12.12rem;
+  backdrop-filter: blur(1px);
+  z-index: 9999;
 
   @media (max-width: 41em) {
     height: 14rem;

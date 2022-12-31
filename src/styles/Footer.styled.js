@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const FooterContainer = styled.footer`
   height: 100vh;
   scroll-snap-align: start;
-  background-color: brown;
+  background-color: #cd8ba8;
   display: flex;
   align-items: center;
 
