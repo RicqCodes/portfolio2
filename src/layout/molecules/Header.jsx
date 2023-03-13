@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 import {
   HeaderContainer,
@@ -10,35 +10,57 @@ import {
   BasicContact,
   SocialContact,
   Span,
-} from "../styles/Header.styled";
-import logo from "../svg/logo.svg";
+} from "../../styles/Header.styled";
+import useIntersectionContext from "../../utils/hooks/useIntersectionContext";
 
 const Header = ({ inViewPort }) => {
+  const [open, setOpen] = useState(false);
+  const { inVP1, inVP2, inVP4, inVP5 } = useIntersectionContext();
+  const location = useLocation();
+
+  const handleToggle = () => {
+    setOpen(!open);
+  };
+
   return (
     <HeaderContainer>
-      <Logo href="https://prince.dev" aria-label="Logo, go to homepage">
-        <img src={logo} alt="logo" />
+      <Logo
+        intersection={
+          (inVP1 && location.pathname === "/") ||
+          inVP2 ||
+          inVP4 ||
+          inVP5 ||
+          location.pathname.includes("/work")
+            ? true
+            : false
+        }
+        aria-label="Logo, go to homepage"
+      >
+        <Link to="">P.</Link>
       </Logo>
       <Button
         type="button"
         aria-label="Open contact menu"
         aria-controls="contact-menu"
         aria-expanded={inViewPort ? "true" : "false"}
+        onClick={handleToggle}
+        className={open ? "open" : "close"}
+        intersection={location.pathname.includes("/work") ? true : false}
       ></Button>
-      <Nav aria-label="Contact menu" className="">
+      <Nav aria-label="Contact menu" className={open ? "open" : "close"}>
         <Ul itemScope itemType="http://schema.org/SiteNavigationElement">
           <li>
-            <Link data-link to="/portfolio">
+            <Link data-link to="/work">
               Work
             </Link>
           </li>
           <li>
-            <Link data-link to="/portfolio">
+            <Link data-link to="/blog">
               Blog
             </Link>
           </li>
           <li>
-            <Link data-link to="/portfolio">
+            <Link data-link to="/resume">
               Resume
             </Link>
           </li>
@@ -47,7 +69,7 @@ const Header = ({ inViewPort }) => {
           <Span>Let's Connect</Span>
           <ul>
             <li>
-              <a data-link href="malito:princenwakanma1996@gmail.com">
+              <a data-link href="mailto:princenwakanma1996@gmail.com">
                 Mail me
               </a>
             </li>

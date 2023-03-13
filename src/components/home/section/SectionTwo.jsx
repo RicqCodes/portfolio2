@@ -1,20 +1,19 @@
 import React, { forwardRef } from "react";
+import useIntersectionContext from "../../../utils/hooks/useIntersectionContext";
 
-// import { Section } from "../../styles/SectionOne.styled";
 import {
   SectionTwoContainer,
   InnerContent,
   Article,
   Content,
   ArticleContainer,
-} from "../../styles/SectionTwo.styled";
+} from "../../../styles/SectionTwo.styled";
 
-const SectionTwo = forwardRef(({ inVP2 }, ref) => {
-  //   console.log(inViewPort);
+const SectionTwo = () => {
+  const { inVP2, section2 } = useIntersectionContext();
   return (
-    // >
     <SectionTwoContainer
-      ref={ref}
+      ref={section2}
       data-section="two"
       data-color="white"
       className="white"
@@ -52,6 +51,6 @@ const SectionTwo = forwardRef(({ inVP2 }, ref) => {
       </InnerContent>
     </SectionTwoContainer>
   );
-});
+};
 
 export default SectionTwo;

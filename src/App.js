@@ -3,19 +3,31 @@ import GlobalStyles from "./styles/global/global.styled";
 import styled from "styled-components";
 import { ThemeProvider } from "styled-components";
 
-import Home from "./components/pages/Home";
 import { theme } from "./styles/global/theme";
+import { IntersectionProvider } from "./utils/context/IntersectionContext";
+
+import Home from "./pages/home";
+import Work from "./pages/work";
+import Description from "./components/description/Description";
+import Layout from "./layout/Layout";
+import WorkPage from "./components/work/WorkPage";
 
 function App() {
   return (
     <AppContainer data-current-section="">
       <ThemeProvider theme={theme}>
         <GlobalStyles />
-        <Router>
+        <>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route element={<Layout />}>
+              <Route path="/" element={<Home />} />
+              <Route path="/work" element={<Work />}>
+                <Route path="" element={<WorkPage />} />
+                <Route path=":id" element={<Description />} />
+              </Route>
+            </Route>
           </Routes>
-        </Router>
+        </>
       </ThemeProvider>
     </AppContainer>
   );

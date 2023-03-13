@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import {
   FooterContainer,
@@ -10,12 +10,13 @@ import {
   Divider,
   FootNote,
   Socials,
-} from "../styles/Footer.styled";
+} from "../../styles/Footer.styled";
 
 const Footer = () => {
+  const location = useLocation();
   const currentYear = new Date().getFullYear();
   return (
-    <FooterContainer data-section="footer">
+    <FooterContainer path={location.pathname} data-section="footer">
       <InnerContainer>
         <ContactMe>
           <h3>Say Hi</h3>

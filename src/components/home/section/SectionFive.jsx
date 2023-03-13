@@ -1,4 +1,5 @@
-import React, { forwardRef } from "react";
+import React from "react";
+import useIntersectionContext from "../../../utils/hooks/useIntersectionContext";
 
 import {
   SectionFiveContainer,
@@ -11,12 +12,14 @@ import {
   Name,
   Email,
   Message,
-} from "../../styles/SectionFive.styled";
+} from "../../../styles/SectionFive.styled";
 
-const SectionFive = forwardRef(({ inVP5 }, ref) => {
+const SectionFive = () => {
+  const { inVP5, section5 } = useIntersectionContext();
+
   return (
     <SectionFiveContainer
-      ref={ref}
+      ref={section5}
       data-section="five"
       tabIndex="1"
       aria-hidden={inVP5 ? "false" : "true"}
@@ -64,6 +67,6 @@ const SectionFive = forwardRef(({ inVP5 }, ref) => {
       </InnerContent>
     </SectionFiveContainer>
   );
-});
+};
 
 export default SectionFive;

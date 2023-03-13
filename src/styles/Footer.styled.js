@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const FooterContainer = styled.footer`
   height: 100vh;
-  scroll-snap-align: start;
+  scroll-snap-align: ${(props) => (props?.path === "/" ? "start" : "none")};
   background-color: brown;
   display: flex;
   align-items: center;

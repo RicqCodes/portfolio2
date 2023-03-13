@@ -6,13 +6,16 @@ import {
   Article,
   Content,
   Figure,
-} from "../../styles/SectionThree.styled";
-import portfolio from "../../svg/portfolio.svg";
+} from "../../../styles/SectionThree.styled";
+import portfolio from "../../../svg/portfolio.svg";
+import useIntersectionContext from "../../../utils/hooks/useIntersectionContext";
 
-const SectionThree = forwardRef(({ inVP3 }, ref) => {
+const SectionThree = () => {
+  const { inVP3, section3 } = useIntersectionContext();
+
   return (
     <SectionThreeContainer
-      ref={ref}
+      ref={section3}
       data-section="three"
       data-color="brown"
       tabIndex="1"
@@ -62,6 +65,6 @@ const SectionThree = forwardRef(({ inVP3 }, ref) => {
       </InnerContent>
     </SectionThreeContainer>
   );
-});
+};
 
 export default SectionThree;

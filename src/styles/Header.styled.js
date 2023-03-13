@@ -1,9 +1,16 @@
 import styled from "styled-components";
+import { SectionOneContainer } from "./SectionOne.styled";
+import { SectionTwoContainer } from "./SectionTwo.styled";
+import { SectionThreeContainer } from "./SectionThree.styled";
+import { SectionFourContainer } from "./SectionFour.styled";
+import { SectionFiveContainer } from "./SectionFive.styled";
 
 export const HeaderContainer = styled.header`
+  padding: 24px;
+  max-width: 1440px;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
-  z-index: 10;
+  z-index: 100000000;
   top: 0;
   position: fixed;
   padding-right: 8.64rem;
@@ -16,7 +23,10 @@ export const HeaderContainer = styled.header`
   background: transparent;
   justify-content: space-between;
   font-size: 1rem;
-  height: 16.12rem;
+  font-size: 40px;
+  font-weight: 700;
+
+  color: ${({ theme }) => theme.colors.primaryColor};
 
   @media (max-width: 41em) {
     height: 14rem;
@@ -27,65 +37,81 @@ export const HeaderContainer = styled.header`
   }
 `;
 
-export const Logo = styled.a`
+export const Logo = styled.div`
   display: flex;
   width: 20rem;
   height: 4.6rem;
   position: relative;
   flex-direction: column;
-  transition: color 700ms;
+  transition: color 1200ms;
   outline-color: transparent;
   text-decoration: none;
 
-  img {
-    width: 100%;
+  a {
+    color: ${({ theme, intersection }) =>
+      intersection ? theme.colors.secondaryColor : theme.colors.primaryColor};
   }
 
   @media (max-width: 41em) {
     width: 14rem;
     height: 2rem;
-
-    img {
-      width: 100%;
-    }
   }
 `;
 export const Button = styled.button`
-  /* z-index: 999; */
+  z-index: 999;
   width: 4rem;
   height: 3rem;
   background: none;
   position: relative;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-flexbox;
   display: inline-flex;
   margin-top: 1rem;
-  color: ${({ theme }) => theme.colors.primaryColor};
+  color: ${({ theme }) => theme.colors.secondaryColor};
   border: none;
 
-  ${HeaderContainer} &:before,
-  ${HeaderContainer} &:after {
+  ${HeaderContainer} &.close:before,
+  ${HeaderContainer} &.close:after {
     content: "";
     width: 100%;
     height: 2px;
     position: absolute;
-    -webkit-transition: 0.2s ease;
-    transition: 0.2s ease;
-    -webkit-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
+    transition: 0.3s ease;
     transform: rotate(0deg);
     background-color: ${({ theme }) => theme.colors.primaryColor};
   }
 
-  ${HeaderContainer} &:before {
+  ${HeaderContainer} &.close:before {
     top: 0;
   }
 
-  ${HeaderContainer} &:after {
+  ${HeaderContainer} &.close:after {
     right: 0;
     width: 72%;
     top: 1.6rem;
+  }
+
+  ${HeaderContainer} &.open:before,
+  ${HeaderContainer} &.open:after {
+    content: "";
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    transition: 0.3s ease;
+    /* transform: rotate(0deg); */
+    background-color: ${({ theme }) => theme.colors.primaryColor};
+  }
+
+  ${HeaderContainer} &.open:before {
+    top: 1rem;
+    right: 1rem;
+    width: 75%;
+    transform: rotate(45deg);
+  }
+
+  ${HeaderContainer} &.open:after {
+    right: 1rem;
+    top: 1rem;
+    width: 75%;
+    transform: rotate(-45deg);
   }
 
   @media (max-width: 41em) {
@@ -97,16 +123,13 @@ export const Button = styled.button`
 `;
 
 export const Nav = styled.nav`
-  display: none;
+  display: flex;
   box-shadow: none;
   padding: 5.5rem;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
+  background-color: #fff;
+  color: ${({ theme }) => theme.colors.secondaryColor};
 
   ${HeaderContainer} &:not(.open) {
     opacity: 1;
@@ -120,8 +143,15 @@ export const Nav = styled.nav`
     width: 35.223rem;
     font-size: 1.58rem;
     position: absolute;
-    -webkit-transition: opacity 0.4s, box-shadow 0.4s;
     transition: opacity 0.4s, box-shadow 0.4s;
+
+    @media (max-width: 504px) {
+      height: 100vh;
+      width: 80%;
+      top: 0;
+      right: 0;
+      margin: auto;
+    }
   }
 
   &::before {
@@ -135,24 +165,21 @@ export const Nav = styled.nav`
 
 export const Ul = styled.ul`
   ${HeaderContainer} ${Nav}:not(.open) & {
-    -webkit-transform: translateY(50px);
-    -ms-transform: translateY(50px);
     transform: translateY(50px);
     opacity: 0;
+    width: 100%;
   }
 
   ${HeaderContainer} ${Nav} & {
     margin: 2.18rem 0;
-    -webkit-transition-delay: 200ms;
     transition-delay: 200ms;
-    -webkit-transition: opacity, -webkit-transform 0.3s;
-    -webkit-transition: opacity, transform 0.3s;
     transition: opacity, transform 0.3s;
   }
 
   ${HeaderContainer} & {
     line-height: 2.5;
     font-size: 1.8rem;
+    font-weight: 400;
   }
 
   &,
@@ -160,10 +187,10 @@ export const Ul = styled.ul`
   li {
     list-style-type: none;
     padding: 0;
-  }
 
-  a {
-    color: ${({ theme }) => theme.colors.primaryColor};
+    a {
+      color: ${({ theme }) => theme.colors.secondaryColor};
+    }
   }
 
   @media (hover: hover) and (any-pointer: fine) {
@@ -203,6 +230,7 @@ export const BasicContact = styled.div`
 
   ul {
     font-size: 1.82rem;
+    font-weight: 400;
 
     ${HeaderContainer} ${Nav}:not(.open) & {
       -webkit-transform: translateY(40px);
@@ -218,7 +246,7 @@ export const BasicContact = styled.div`
     }
 
     a {
-      color: ${({ theme }) => theme.colors.primaryColor};
+      color: ${({ theme }) => theme.colors.secondaryColor};
     }
 
     @media (hover: hover) and (any-pointer: fine) {
@@ -253,8 +281,6 @@ export const BasicContact = styled.div`
 
   ${HeaderContainer} ${Nav} & {
     margin: 0 0 5.6rem;
-    -webkit-transition-delay: 400ms;
-    transition-delay: 400ms;
   }
 `;
 
@@ -266,11 +292,6 @@ export const Span = styled.span`
 
   ${HeaderContainer} ${Nav}:not(.open) ${BasicContact} & {
     opacity: 0;
-  }
-
-  ${HeaderContainer} ${Nav} ${BasicContact} & {
-    -webkit-transition: opacity 0.2s 400ms;
-    transition: opacity 0.2s 400ms;
   }
 `;
 
@@ -286,10 +307,7 @@ export const SocialContact = styled.ul`
   }
 
   ${HeaderContainer} ${Nav} & {
-    -webkit-transition-delay: 600ms;
     transition-delay: 600ms;
-    -webkit-transition: opacity, -webkit-transform 0.3s;
-    -webkit-transition: opacity, transform 0.3s;
     transition: opacity, transform 0.3s;
     font-size: 1.42rem;
   }
@@ -303,7 +321,7 @@ export const SocialContact = styled.ul`
   }
 
   a {
-    color: ${({ theme }) => theme.colors.primaryColor};
+    color: ${({ theme }) => theme.colors.secondaryColor};
   }
 
   @media (hover: hover) and (any-pointer: fine) {

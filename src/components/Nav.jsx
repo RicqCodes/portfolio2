@@ -1,26 +1,28 @@
 import React from "react";
 import styled from "styled-components";
+import useIntersectionContext from "../utils/hooks/useIntersectionContext";
 
-import { SectionOneContainer } from "../styles/SectionOne.styled";
-import { SectionTwoContainer } from "../styles/SectionTwo.styled";
-import { SectionThreeContainer } from "../styles/SectionThree.styled";
-import { SectionFourContainer } from "../styles/SectionFour.styled";
-import { SectionFiveContainer } from "../styles/SectionFive.styled";
-import { FooterContainer } from "../styles/Footer.styled";
-
-const Nav = (props) => {
-  console.log(props.inVP1, props.inVP2, props.inVP3, props.inVP4, props.inVP5);
+const Nav = () => {
+  const {
+    scrollTo,
+    element1,
+    element2,
+    element3,
+    element4,
+    element5,
+    inVP1,
+    inVP2,
+    inVP3,
+    inVP4,
+    inVP5,
+  } = useIntersectionContext();
   return (
     <NavContainer
       aria-label="Main navigation"
       className={
-        !props.inVP2 &&
-        !props.inVP3 &&
-        !props.inVP4 &&
-        !props.inVP5 &&
-        !props.inVP1
+        !inVP2 && !inVP3 && !inVP4 && !inVP5 && !inVP1
           ? "hide"
-          : props.inVP1 || props.inVP3
+          : inVP1 || inVP3
           ? "primaryColor"
           : "secondaryColor"
       }
@@ -28,81 +30,51 @@ const Nav = (props) => {
       <ul>
         <li>
           <button
-            onClick={() => props.scrollTo(props.element1)}
+            onClick={() => scrollTo(element1)}
             type="button"
             aria-label="Go to first section."
             className={
-              !props.inVP2 &&
-              !props.inVP3 &&
-              !props.inVP4 &&
-              !props.inVP5 &&
-              props.inVP1
-                ? "current"
-                : ""
+              !inVP2 && !inVP3 && !inVP4 && !inVP5 && inVP1 ? "current" : ""
             }
           ></button>
         </li>
         <li>
           <button
-            onClick={() => props.scrollTo(props.element2)}
+            onClick={() => scrollTo(element2)}
             type="button"
             aria-label="Go to second section"
             className={
-              !props.inVP1 &&
-              !props.inVP3 &&
-              !props.inVP4 &&
-              !props.inVP5 &&
-              props.inVP2
-                ? "current"
-                : ""
+              !inVP1 && !inVP3 && !inVP4 && !inVP5 && inVP2 ? "current" : ""
             }
           ></button>
         </li>
         <li>
           <button
-            onClick={() => props.scrollTo(props.element3)}
+            onClick={() => scrollTo(element3)}
             type="button"
             aria-label="Go to third section"
             className={
-              !props.inVP1 &&
-              !props.inVP2 &&
-              !props.inVP4 &&
-              !props.inVP5 &&
-              props.inVP3
-                ? "current"
-                : ""
+              !inVP1 && !inVP2 && !inVP4 && !inVP5 && inVP3 ? "current" : ""
             }
           ></button>
         </li>
         <li>
           <button
-            onClick={() => props.scrollTo(props.element4)}
+            onClick={() => scrollTo(element4)}
             type="button"
             aria-label="Go to fourth section"
             className={
-              !props.inVP1 &&
-              !props.inVP2 &&
-              !props.inVP3 &&
-              !props.inVP5 &&
-              props.inVP4
-                ? "current"
-                : ""
+              !inVP1 && !inVP2 && !inVP3 && !inVP5 && inVP4 ? "current" : ""
             }
           ></button>
         </li>
         <li>
           <button
-            onClick={() => props.scrollTo(props.element5)}
+            onClick={() => scrollTo(element5)}
             type="button"
             aria-label="Go to fifth section"
             className={
-              !props.inVP1 &&
-              !props.inVP2 &&
-              !props.inVP3 &&
-              !props.inVP4 &&
-              props.inVP5
-                ? "current"
-                : ""
+              !inVP1 && !inVP2 && !inVP3 && !inVP4 && inVP5 ? "current" : ""
             }
           ></button>
         </li>
@@ -132,30 +104,6 @@ const NavContainer = styled.nav`
     display: none;
   }
 
-  ${SectionOneContainer}[data-section="one"] & {
-    color: ${({ theme }) => theme.colors.primaryColor};
-  }
-
-  ${SectionTwoContainer}[data-section="two"]  & {
-    display: none;
-    background-color: blue;
-    color: ${({ theme }) => theme.colors.secondaryColor};
-  }
-
-  ${SectionThreeContainer}[data-section="three"]  & {
-    color: ${({ theme }) => theme.colors.primaryColor};
-  }
-
-  ${SectionFourContainer}[data-section="four"]  & {
-    color: ${({ theme }) => theme.colors.secondaryColor};
-  }
-  ${SectionFiveContainer}[data-section="four"]  & {
-    color: ${({ theme }) => theme.colors.secondaryColor};
-  }
-  ${FooterContainer}[data-section="footer"]  & {
-    display: none;
-  }
-
   & ul {
     width: 0.71rem;
     height: 0.71rem;
@@ -163,6 +111,7 @@ const NavContainer = styled.nav`
     gap: 1rem;
     flex-direction: column;
   }
+
   li {
     width: 0.75rem;
   }

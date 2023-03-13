@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 // import { Section } from "./SectionOne.styled";
 
-export const SectionFiveContainer = styled.div`
+export const SectionFiveContainer = styled.section`
   display: flex;
   height: 100vh;
   padding: 5rem 8rem 0;

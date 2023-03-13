@@ -59,13 +59,13 @@ html {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: "SF UI Text",  sans-serif;
   }
 
 body {
         /* color: #3454b4; */
         font: inherit;
         position: relative;
-        font-family: "SF UI Text",  sans-serif;
         background-color: #f9f9f9;
         line-height: 1;
         -webkit-font-smoothing: antialiased;
@@ -130,15 +130,69 @@ ul, ol, li {
   }
 
   a {
-    -webkit-text-decoration: none;
     text-decoration: none;
-    -webkit-transition-duration: 300ms;
     transition-duration: 300ms;
-    -webkit-transition-property: opacity, color, background-color, -webkit-transform, border;
-    -webkit-transition-property: opacity, color, background-color, transform, border;
     transition-property: opacity, color, background-color, transform, border;
     background-color: transparent;
+        color: initial;
+        text-decoration: none;
+
+        &:hover, 
+        &:visited, 
+        &:focus {
+            text-decoration: none;
+    }
 }
+
+p {
+        font-size: 16px;
+        line-height:32px;
+
+        @media (max-width: 548px) {
+        font-size: 18px;
+       }
+    }
+
+    /* span {
+        font-size: 14px;
+
+       @media (max-width: 548px) {
+        font-size: 16px;
+       }
+    } */
+
+    small {
+        font-size: 12px;
+
+        @media (max-width: 548px) {
+        font-size: 14px;
+       }
+    }
+
+    h1 {
+        font-size: 38px;
+        font-weight: 500;
+    }
+
+    h2 {
+        font-size: 33px;
+        font-weight: 400;
+    }
+
+    h3 {
+        font-size: 28px;
+        font-weight: 400;
+    }
+
+    h4 {
+        font-size: 23px;
+        font-weight: 400;
+    }
+
+    h5 {
+        font-size: 18px;
+        font-weight: 400;
+    }
 
 `;
 

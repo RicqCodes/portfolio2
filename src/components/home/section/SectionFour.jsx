@@ -1,5 +1,5 @@
-import React, { forwardRef } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React from "react";
+import { Link } from "react-router-dom";
 
 // import { Section } from "../../styles/SectionOne.styled";
 import {
@@ -9,13 +9,15 @@ import {
   Lane,
   Article,
   Content,
-} from "../../styles/SectionFour.styled";
+} from "../../../styles/SectionFour.styled";
+import useIntersectionContext from "../../../utils/hooks/useIntersectionContext";
 
-const SectionFour = forwardRef(({ inVP4 }, ref) => {
-  const navigation = useNavigate();
+const SectionFour = () => {
+  const { inVP4, section4 } = useIntersectionContext();
+
   return (
     <SectionFourContainer
-      ref={ref}
+      ref={section4}
       data-section="four"
       tabIndex="1"
       aria-hidden={inVP4 ? "false" : "true"}
@@ -32,7 +34,7 @@ const SectionFour = forwardRef(({ inVP4 }, ref) => {
                 </p>
               </Content>
             </Article>
-            <Link to="/portfolio">
+            <Link to="/work">
               <p>GO TO WORK</p>
             </Link>
           </Lane>
@@ -54,6 +56,6 @@ const SectionFour = forwardRef(({ inVP4 }, ref) => {
       </InnerContent>
     </SectionFourContainer>
   );
-});
+};
 
 export default SectionFour;

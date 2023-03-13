@@ -8,6 +8,7 @@ import { FooterContainer } from "./Footer.styled";
 
 export const SectionOneContainer = styled.section`
   display: flex;
+  width: 100%;
   position: relative;
   flex-direction: column;
   align-items: center;
