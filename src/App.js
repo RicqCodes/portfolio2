@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import GlobalStyles from "./styles/global/global.styled";
 import styled from "styled-components";
 import { ThemeProvider } from "styled-components";
@@ -20,7 +20,14 @@ function App() {
         <>
           <Routes>
             <Route element={<Layout />}>
-              <Route path="/" element={<Home />} />
+              <Route
+                path="/"
+                element={
+                  <IntersectionProvider>
+                    <Home />
+                  </IntersectionProvider>
+                }
+              />
               <Route path="/work" element={<Work />}>
                 <Route path="" element={<WorkPage />} />
                 <Route path=":id" element={<Description />} />

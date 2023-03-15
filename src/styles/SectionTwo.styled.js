@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import { Nav } from "./SectionOne.styled";
 
 export const SectionTwoContainer = styled.section`
   display: flex;
   flex-direction: column;
   height: 100vh;
-  padding: 20rem 12rem 0;
+  padding: 8rem 14rem;
+  width: 100%;
   scroll-snap-align: start;
 
   & [data-section="two"] .sc-bcfvAP {
@@ -13,13 +13,15 @@ export const SectionTwoContainer = styled.section`
   }
 
   @media (max-width: 41em) {
-    padding: 10rem 6rem 0;
+    padding: 10rem 24px;
     scroll-snap-align: none;
+    height: auto;
   }
 `;
 
 export const InnerContent = styled.div`
   display: flex;
+  width: 100%;
 `;
 
 export const ArticleContainer = styled.div`
@@ -30,8 +32,6 @@ export const ArticleContainer = styled.div`
 `;
 
 export const Article = styled.article`
-  /* text-align: left;
-  position: relative; */
   & p,
   & h1 {
     transition: transform 0.5s, opacity 0.2s;
@@ -43,29 +43,20 @@ export const Article = styled.article`
     line-height: 1.1;
     letter-spacing: -0.03em;
     color: #a42e62;
-    /* max-width: 30vw; */
     transition-delay: 200ms;
   }
 
   & p {
-    width: 60rem;
-    font-size: 1.8rem;
-    -webkit-transition-delay: 310ms;
     transition-delay: 310ms;
     line-height: 1.8;
     color: #000;
     margin-top: 2rem;
-  }
-
-  @media (max-width: 41em) {
-    & p {
-      width: 100%;
-    }
   }
 `;
 
 export const Content = styled.div`
   ${Article} & {
     position: relative;
+    width: 100%;
   }
 `;

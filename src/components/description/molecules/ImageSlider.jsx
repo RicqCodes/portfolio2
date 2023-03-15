@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
-import { FaBeer } from "react-icons/fa";
-import {
-  BsFillBackspaceFill,
-  BsFillBackspaceReverseFill,
-} from "react-icons/bs";
+// import { FaBeer } from "react-icons/fa";
+// import {
+//   BsFillBackspaceFill,
+//   BsFillBackspaceReverseFill,
+// } from "react-icons/bs";
 
 const ImageSlider = ({ images }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -66,23 +66,23 @@ const ImageSlider = ({ images }) => {
     return () => clearInterval(intervalIdRef.current);
   }, [autoplay, currentSlide, images.length]);
 
-  const handlePrevClick = () => {
-    if (currentSlide > 0) {
-      setCurrentSlide(currentSlide - 1);
-    } else {
-      setCurrentSlide(images.length - 1);
-    }
-    setAutoplay(false);
-  };
+  //   const handlePrevClick = () => {
+  //     if (currentSlide > 0) {
+  //       setCurrentSlide(currentSlide - 1);
+  //     } else {
+  //       setCurrentSlide(images.length - 1);
+  //     }
+  //     setAutoplay(false);
+  //   };
 
-  const handleNextClick = () => {
-    if (currentSlide === images.length - 1) {
-      setCurrentSlide(0);
-    } else {
-      setCurrentSlide(currentSlide + 1);
-    }
-    setAutoplay(false);
-  };
+  //   const handleNextClick = () => {
+  //     if (currentSlide === images.length - 1) {
+  //       setCurrentSlide(0);
+  //     } else {
+  //       setCurrentSlide(currentSlide + 1);
+  //     }
+  //     setAutoplay(false);
+  //   };
 
   return (
     <ImageSliderContainer>
@@ -138,19 +138,19 @@ const ImageContainer = styled.div`
   }
 `;
 
-const ArrowLeft = styled.div`
-  position: absolute;
-  display: flex;
-  justify-content: flex-start;
-  left: 80px;
-  width: 100%;
-  color: ${({ theme }) => theme.colors.secondaryColor};
-`;
-const ArrowRight = styled.div`
-  position: absolute;
-  display: flex;
-  justify-content: flex-end;
-  right: 90px;
-  width: 100%;
-  color: ${({ theme }) => theme.colors.secondaryColor};
-`;
+// const ArrowLeft = styled.div`
+//   position: absolute;
+//   display: flex;
+//   justify-content: flex-start;
+//   left: 80px;
+//   width: 100%;
+//   color: ${({ theme }) => theme.colors.secondaryColor};
+// `;
+// const ArrowRight = styled.div`
+//   position: absolute;
+//   display: flex;
+//   justify-content: flex-end;
+//   right: 90px;
+//   width: 100%;
+//   color: ${({ theme }) => theme.colors.secondaryColor};
+// `;

@@ -1,4 +1,4 @@
-import React, { forwardRef } from "react";
+import React from "react";
 
 import {
   SectionThreeContainer,
@@ -30,32 +30,29 @@ const SectionThree = () => {
               Last 5 Years
             </h1>
             <p>
-              I've built products for companies and businesses around the globe
-              ranging from marketing websites to complex solutions and
-              enterprise apps with focus on fast, elegant and accessible user
-              experiences.
+              At Eval360, I developed and implemented the user interface and
+              user experience of the software. I collaborated with the product
+              and design teams to understand requirements and goals. I worked
+              with the development team to ensure quality and maintainability.
             </p>
             <p>
-              Currently, I work at Shopify as a Senior UX Developer and
-              Accessibility advocate crafting thoughtful and inclusive
-              experiences that adhere to web standards for over a million
-              merchants across the world.
+              During my time at Dotlaunch as a Frontend & Solidity Developer, I
+              was responsible for developing and examining smart contracts, as
+              well as evaluating and implementing new tools and technologies.
             </p>
             <p>
-              Before now, I was Principal Frontend Engineer at hellotax, where I
-              worked on a suite of tools and services tailored at providing
-              fast, automated VAT Registration / filings &amp; Returns solutions
-              for multi-channel sellers across Europe.
+              I designed and implemented React.js projects, debugged technical
+              issues, and revised platform documentation during my Frontend
+              Developer internship at HNG.
             </p>
             <p>
-              Prior to hellotax, I was Senior frontend engineering contractor
-              with Pixel2HTML, building JavaScript applications and interfaces
-              for orgs and individuals.
-            </p>
-            <p>
-              I once also led the frontend team at a Russian startup, Conectar
-              through building multiple React applications into a single robust
-              learning platform.
+              At Hype and Coursebay, I worked as a frontend developer on
+              projects that involved designing and developing user interfaces
+              and user experiences using various technologies like JavaScript
+              React, NextJs, RTK Query. I also collaborated with designers and
+              back-end developers to ensure the projects were functional, tested
+              and debugged the codebase, and deployed the projects to
+              production.
             </p>
           </Content>
         </Article>

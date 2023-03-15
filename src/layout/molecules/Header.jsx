@@ -15,12 +15,13 @@ import useIntersectionContext from "../../utils/hooks/useIntersectionContext";
 
 const Header = ({ inViewPort }) => {
   const [open, setOpen] = useState(false);
-  const { inVP1, inVP2, inVP4, inVP5 } = useIntersectionContext();
+  const { inVP1, inVP2, inVP4, inVP5, section1 } = useIntersectionContext();
   const location = useLocation();
 
   const handleToggle = () => {
     setOpen(!open);
   };
+  console.log(section1);
 
   return (
     <HeaderContainer>

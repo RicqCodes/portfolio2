@@ -1,7 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
-// import { Section } from "../../styles/SectionOne.styled";
 import {
   SectionFourContainer,
   InnerContent,
@@ -27,10 +25,10 @@ const SectionFour = () => {
           <Lane>
             <Article>
               <Content>
-                <h1>I design & build</h1>
+                <h1>I build</h1>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Minima aut nisi tempora
+                  I specialize in building sleek and responsive user interfaces
+                  that provide excellent user experiences.
                 </p>
               </Content>
             </Article>
@@ -41,10 +39,10 @@ const SectionFour = () => {
           <Lane>
             <Article>
               <Content>
-                <h1>I write i'm inspired</h1>
+                <h1>I write</h1>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Minima aut nisi tempora
+                  I love to share my knowledge and insights through writing
+                  articles on various topics related to web development.
                 </p>
               </Content>
             </Article>

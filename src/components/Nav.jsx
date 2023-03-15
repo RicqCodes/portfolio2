@@ -90,7 +90,7 @@ const NavContainer = styled.nav`
   display: flex;
   position: fixed;
   top: 50%;
-  right: 7.5rem;
+  right: 3.5rem;
 
   &.primaryColor {
     color: ${({ theme }) => theme.colors.primaryColor};

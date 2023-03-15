@@ -1,18 +1,17 @@
 import styled from "styled-components";
 
-// import { Section } from "./SectionOne.styled";
-
 export const SectionFourContainer = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  /* padding: 20rem 12rem 0; */
+  padding: 10rem 3rem 0;
   scroll-snap-align: start;
 
   @media (max-width: 41em) {
-    padding: 10rem 6rem 0;
+    padding: 4.5rem 0;
+    height: auto;
     scroll-snap-align: none;
   }
 
@@ -25,28 +24,35 @@ export const InnerContent = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
 `;
 
 export const Lanes = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 3rem;
+  max-width: 1280px;
+  padding: 64px;
+  justify-content: center;
   background-color: #fff;
   width: 100%;
 
   @media (max-width: 29.3em) {
     flex-direction: column;
+    padding: 24px;
+    width: 100%;
   }
 `;
 
 export const Lane = styled.div`
-  padding: 8rem;
+  /* padding: 8rem; */
 
   a {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50%;
+    max-width: 320px;
+    width: 100%;
     height: 5rem;
     border: 1px solid #9a1750;
     background: linear-gradient(to right, #9a1750 50%, white 50%);
@@ -75,7 +81,8 @@ export const Lane = styled.div`
   }
 
   @media (max-width: 41.2rem) {
-    padding: 4rem;
+    padding: 4rem 0;
+    width: 100%;
   }
 `;
 
@@ -84,6 +91,10 @@ export const Article = styled.div`
   text-align: left;
   position: relative;
   margin-bottom: 8.5rem;
+
+  @media (max-width: 41rem) {
+    margin: 0;
+  }
 `;
 
 export const Content = styled.div`
@@ -92,14 +103,13 @@ export const Content = styled.div`
   h1 {
     font-size: 4rem;
     color: ${({ theme }) => theme.colors.secondaryColor};
-    max-width: 32vw;
     font-weight: 900;
     line-height: 1.1;
+    text-transform: uppercase;
     letter-spacing: -0.03em;
   }
 
   p {
-    width: 32vw;
     line-height: 1.2;
     font-size: 1.6em;
     letter-spacing: 0.02em;
@@ -110,13 +120,14 @@ export const Content = styled.div`
   @media (max-width: 41.2em) {
     h1 {
       font-size: 3.8rem;
-      max-width: 50vw;
+      max-width: 100%;
+      width: 100%;
     }
   }
 
   @media (max-width: 29em) {
     p {
-      width: 50vw;
+      width: 100%;
     }
   }
 `;

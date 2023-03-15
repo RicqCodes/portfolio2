@@ -1,7 +1,5 @@
 import styled from "styled-components";
 
-// import { Section } from "./SectionOne.styled";
-
 export const SectionThreeContainer = styled.section`
   display: flex;
   height: 100vh;
@@ -11,7 +9,7 @@ export const SectionThreeContainer = styled.section`
   background-color: ${({ theme }) => theme.colors.secondaryColor};
 
   @media (max-width: 41em) {
-    padding: 10rem 6rem 0;
+    padding: 48px 24px;
     scroll-snap-align: none;
     height: auto;
   }
@@ -23,7 +21,7 @@ export const InnerContent = styled.div`
   }
   display: flex;
   justify-content: space-between;
-  width: 90%;
+  width: 100%;
   margin: auto;
 
   @media (max-width: 47.9rem) {
@@ -53,9 +51,7 @@ export const Content = styled.div`
 
   & p {
     color: #fff;
-    width: 27vw;
     max-width: 701px;
-    font-size: 1.4rem;
     line-height: 1.6;
     margin-bottom: 1.5rem;
     transition-delay: 310ms;
@@ -63,26 +59,14 @@ export const Content = styled.div`
 
   & h1 {
     font-size: 5rem;
+    color: #fff;
+    font-weight: 600;
     margin: 0.67em 0;
-    color: ${({ theme }) => theme.colors.primaryColor};
   }
 
   @media (min-width: 701px) {
     & h1 {
-      max-width: 30vw;
       transition-delay: 200ms;
-    }
-  }
-
-  @media (max-width: 60.7rem) {
-    & p {
-      width: 30vw;
-    }
-  }
-
-  @media (max-width: 47.8rem) {
-    & p {
-      width: 70vw;
     }
   }
 `;
@@ -92,7 +76,7 @@ export const Figure = styled.figure`
   width: 60%;
 
   @media (max-width: 47.8rem) {
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     margin-top: 0;

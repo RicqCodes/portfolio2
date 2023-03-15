@@ -6,12 +6,14 @@ export const SectionFiveContainer = styled.section`
   display: flex;
   height: 100vh;
   padding: 5rem 8rem 0;
+  max-width: 980px;
+  margin: auto;
   align-items: center;
   justify-content: center;
   scroll-snap-align: start;
 
   @media (max-width: 41em) {
-    padding: 10rem 6rem 0;
+    padding: 10rem 3rem 0;
     scroll-snap-align: none;
     height: auto;
   }
@@ -23,6 +25,7 @@ export const InnerContent = styled.div`
 
 export const Article = styled.article`
   position: relative;
+  width: 100%;
 `;
 
 export const Content = styled.div`
@@ -36,12 +39,10 @@ export const Header = styled.div`
   & h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
-    line-height: 1.6;
     color: #9a1750;
   }
 
   & p {
-    letter-spacing: 1.4px;
     font-size: 1.8rem;
     color: #2e0718;
   }
@@ -49,7 +50,7 @@ export const Header = styled.div`
 
 export const Form = styled.form`
   display: flex;
-  width: 95%;
+  width: 100%;
   margin: auto;
   justify-content: center;
   flex-direction: column;
@@ -72,7 +73,6 @@ export const Form = styled.form`
       text-align: center;
       justify-items: center;
       color: #9a1750;
-      font-size: 1.5rem;
       letter-spacing: 0.2rem;
       font-weight: 500;
       transition: all 0.6s ease-out;
@@ -85,11 +85,6 @@ export const Form = styled.form`
         color: #fff;
       }
     }
-  }
-
-  @media (max-width: 40.32em) {
-    /* padding: 8rem;
-    margin: auto; */
   }
 `;
 
@@ -114,7 +109,7 @@ export const Name = styled.div`
 
   & label {
     color: #c27496;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
   }
 
   & input[type="text"] {
@@ -152,7 +147,7 @@ export const Name = styled.div`
 export const Email = styled(Name)`
   & label {
     color: #c27496;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
   }
 
   & input[type="email"] {
@@ -195,7 +190,7 @@ export const Message = styled.div`
 
   & label {
     color: #c27496;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     font-weight: 200;
   }
 

@@ -3,6 +3,7 @@ import { IntersectionContext } from "../context/IntersectionContext";
 
 const useIntersectionContext = () => {
   const intersection = useContext(IntersectionContext);
+
   return intersection;
 };
 

@@ -5,7 +5,6 @@ const useIntersecton = (element, rootMargin) => {
 
   const { current } = element;
   useEffect(() => {
-    console.log("i am running");
     const { current } = element;
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -15,7 +14,7 @@ const useIntersecton = (element, rootMargin) => {
     );
 
     element?.current && observer?.observe(current);
-    // return () => current !== undefined && observer?.unobserve(current);
+    return () => current !== undefined && observer?.unobserve(current);
   }, [element, rootMargin]);
   return { isIntersecting, current };
 };

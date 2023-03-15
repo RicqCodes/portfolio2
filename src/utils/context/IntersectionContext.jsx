@@ -1,4 +1,4 @@
-import { createContext, useEffect, useRef, useState } from "react";
+import { createContext, useEffect, useRef } from "react";
 
 import useIntersecton from "../hooks/useIntersection";
 
@@ -11,8 +11,6 @@ export const IntersectionProvider = ({ children }) => {
   const section4 = useRef();
   const section5 = useRef();
 
-  const [rerun, setRerun] = useState(true);
-  console.log("are you running");
   const { isIntersecting: inVP1, current: element1 } = useIntersecton(
     section1,
     "-10%"
@@ -38,8 +36,22 @@ export const IntersectionProvider = ({ children }) => {
   );
 
   useEffect(() => {
-    return () => {};
-  }, []);
+    // Cleanup function to disconnect all Intersection Observer instances
+    return () => {
+      return () => {
+        const observerList = [
+          element1,
+          element2,
+          element3,
+          element4,
+          element5,
+        ].filter(Boolean); // filter out undefined elements
+        observerList.forEach((element) => {
+          element && element.disconnect();
+        });
+      };
+    };
+  }, [element1, element2, element3, element4, element5]);
 
   const scrollTo = (section) => {
     section && section.scrollIntoView({ behavior: "smooth" });
@@ -63,7 +75,6 @@ export const IntersectionProvider = ({ children }) => {
         section3,
         section4,
         section5,
-        setRerun,
       }}
     >
       {children}

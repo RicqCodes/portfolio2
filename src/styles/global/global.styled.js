@@ -30,7 +30,7 @@ html {
         display: none;
         }
 
-       @media (max-width: 83em) {
+       /* @media (max-width: 83em) {
         font-size: 58%;
        }
 
@@ -52,7 +52,7 @@ html {
 
        @media (max-width: 27em) {
         font-size: 50%;
-       }
+       } */
     }
 
 *, *::before, *::after {

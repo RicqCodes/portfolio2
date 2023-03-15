@@ -1,20 +1,14 @@
 import styled from "styled-components";
-import { SectionOneContainer } from "./SectionOne.styled";
-import { SectionTwoContainer } from "./SectionTwo.styled";
-import { SectionThreeContainer } from "./SectionThree.styled";
-import { SectionFourContainer } from "./SectionFour.styled";
-import { SectionFiveContainer } from "./SectionFive.styled";
 
 export const HeaderContainer = styled.header`
   padding: 24px;
   max-width: 1440px;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
-  z-index: 100000000;
   top: 0;
   position: fixed;
-  padding-right: 8.64rem;
-  padding-left: 8.64rem;
+  padding-right: 3.64rem;
+  padding-left: 3.64rem;
   width: 100%;
   display: flex;
   z-index: 1000;
@@ -51,11 +45,6 @@ export const Logo = styled.div`
     color: ${({ theme, intersection }) =>
       intersection ? theme.colors.secondaryColor : theme.colors.primaryColor};
   }
-
-  @media (max-width: 41em) {
-    width: 14rem;
-    height: 2rem;
-  }
 `;
 export const Button = styled.button`
   z-index: 999;
@@ -67,6 +56,13 @@ export const Button = styled.button`
   margin-top: 1rem;
   color: ${({ theme }) => theme.colors.secondaryColor};
   border: none;
+
+  &:before,
+  &:after {
+    @media (max-width: 41em) {
+      background-color: ${({ theme }) => theme.colors.secondaryColor}!important;
+    }
+  }
 
   ${HeaderContainer} &.close:before,
   ${HeaderContainer} &.close:after {
@@ -102,13 +98,13 @@ export const Button = styled.button`
 
   ${HeaderContainer} &.open:before {
     top: 1rem;
-    right: 1rem;
+    right: 3rem;
     width: 75%;
     transform: rotate(45deg);
   }
 
   ${HeaderContainer} &.open:after {
-    right: 1rem;
+    right: 3rem;
     top: 1rem;
     width: 75%;
     transform: rotate(-45deg);

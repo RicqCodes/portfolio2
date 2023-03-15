@@ -88,9 +88,9 @@ export const Article = styled.article`
   }
 
   @media (max-width: 72em) {
-    p {
+    /* p {
       width: 32vw;
-    }
+    } */
   }
 
   text-align: left;
@@ -98,20 +98,20 @@ export const Article = styled.article`
 
   @media (max-width: 41em) {
     margin-top: 0.5rem;
-
+    /* 
     h1 {
       width: 50vh;
-    }
+    } */
     /* 
     p {
       width: 100vw;
     } */
   }
-  @media (max-width: 24.5em) {
+  /* @media (max-width: 24.5em) {
     h1 {
       width: 30vh;
     }
-  }
+  } */
 `;
 
 export const Figure = styled.figure`
@@ -293,7 +293,7 @@ export const InnerContentBottom = styled.div`
   padding-left: 14.4rem;
   display: flex;
   justify-content: space-between;
-  width: 41%;
+  width: 100%;
 
   @media (max-width: 41em) {
     width: 90%;
@@ -314,7 +314,7 @@ export const Ul = styled.ul`
   gap: 3rem;
   font-size: 1.2rem;
   color: ${({ theme }) => theme.colors.secondaryColor};
-  width: 28vw;
+  width: 45vw;
   line-height: 1.6;
 
   @media (max-width: 41em) {

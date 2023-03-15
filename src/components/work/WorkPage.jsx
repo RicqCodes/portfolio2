@@ -29,6 +29,10 @@ const WorkContainer = styled.div`
   padding: 24px;
   scroll-snap-align: none;
   min-height: 100vh;
+
+  @media (max-width: 41em) {
+    margin-top: 64px;
+  }
 `;
 
 const InnerContent = styled.div`

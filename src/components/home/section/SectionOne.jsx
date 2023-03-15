@@ -1,5 +1,4 @@
-import React, { forwardRef, useState } from "react";
-import { useEffect } from "react";
+import React, { useState } from "react";
 import useIntersectionContext from "../../../utils/hooks/useIntersectionContext";
 
 import {
@@ -16,8 +15,7 @@ import {
 } from "../../../styles/SectionOne.styled";
 
 const SectionOne = () => {
-  const { inVP1, section1, setRerun } = useIntersectionContext();
-  setRerun((prev) => !prev);
+  const { inVP1, section1 } = useIntersectionContext();
   const [hover, setHover] = useState(false);
 
   return (
@@ -40,8 +38,8 @@ const SectionOne = () => {
               </span>
             </h1>
             <p>
-              I enjoy designing and developing solid and scalable frontend
-              products with great user experiences.
+              I take pleasure in creating robust and scalable frontend products
+              that provide exceptional user experiences.
             </p>
           </Content>
         </Article>
@@ -57,12 +55,12 @@ const SectionOne = () => {
       <InnerContentBottom>
         <Ul aria-label="Highlights.">
           <li>
-            Highly skilled at progressive enhancement, design systems & UI
-            Engineering.
+            possess strong expertise in progressive enhancement, design systems,
+            and UI engineering.
           </li>
           <li>
-            Over a decade of experience building products for clients across
-            several countries.
+            5 years of experience in building products for clients across
+            various countries.
           </li>
         </Ul>
       </InnerContentBottom>
